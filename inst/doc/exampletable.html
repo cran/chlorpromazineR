@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+
+<title>Examples produced by chlorpromazineR</title>
+
+<script src="data:application/javascript;base64,Ly8gUGFuZG9jIDIuOSBhZGRzIGF0dHJpYnV0ZXMgb24gYm90aCBoZWFkZXIgYW5kIGRpdi4gV2UgcmVtb3ZlIHRoZSBmb3JtZXIgKHRvCi8vIGJlIGNvbXBhdGlibGUgd2l0aCB0aGUgYmVoYXZpb3Igb2YgUGFuZG9jIDwgMi44KS4KZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lcignRE9NQ29udGVudExvYWRlZCcsIGZ1bmN0aW9uKGUpIHsKICB2YXIgaHMgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCJkaXYuc2VjdGlvbltjbGFzcyo9J2xldmVsJ10gPiA6Zmlyc3QtY2hpbGQiKTsKICB2YXIgaSwgaCwgYTsKICBmb3IgKGkgPSAwOyBpIDwgaHMubGVuZ3RoOyBpKyspIHsKICAgIGggPSBoc1tpXTsKICAgIGlmICghL15oWzEtNl0kL2kudGVzdChoLnRhZ05hbWUpKSBjb250aW51ZTsgIC8vIGl0IHNob3VsZCBiZSBhIGhlYWRlciBoMS1oNgogICAgYSA9IGguYXR0cmlidXRlczsKICAgIHdoaWxlIChhLmxlbmd0aCA+IDApIGgucmVtb3ZlQXR0cmlidXRlKGFbMF0ubmFtZSk7CiAgfQp9KTsK"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+
+<link rel="stylesheet" href="data:text/css,body%20%7B%0Abackground%2Dcolor%3A%20%23fff%3B%0Amargin%3A%201em%20auto%3B%0Amax%2Dwidth%3A%20700px%3B%0Aoverflow%3A%20visible%3B%0Apadding%2Dleft%3A%202em%3B%0Apadding%2Dright%3A%202em%3B%0Afont%2Dfamily%3A%20%22Open%20Sans%22%2C%20%22Helvetica%20Neue%22%2C%20Helvetica%2C%20Arial%2C%20sans%2Dserif%3B%0Afont%2Dsize%3A%2014px%3B%0Aline%2Dheight%3A%201%2E35%3B%0A%7D%0A%23TOC%20%7B%0Aclear%3A%20both%3B%0Amargin%3A%200%200%2010px%2010px%3B%0Apadding%3A%204px%3B%0Awidth%3A%20400px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Aborder%2Dradius%3A%205px%3B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Afont%2Dsize%3A%2013px%3B%0Aline%2Dheight%3A%201%2E3%3B%0A%7D%0A%23TOC%20%2Etoctitle%20%7B%0Afont%2Dweight%3A%20bold%3B%0Afont%2Dsize%3A%2015px%3B%0Amargin%2Dleft%3A%205px%3B%0A%7D%0A%23TOC%20ul%20%7B%0Apadding%2Dleft%3A%2040px%3B%0Amargin%2Dleft%3A%20%2D1%2E5em%3B%0Amargin%2Dtop%3A%205px%3B%0Amargin%2Dbottom%3A%205px%3B%0A%7D%0A%23TOC%20ul%20ul%20%7B%0Amargin%2Dleft%3A%20%2D2em%3B%0A%7D%0A%23TOC%20li%20%7B%0Aline%2Dheight%3A%2016px%3B%0A%7D%0Atable%20%7B%0Amargin%3A%201em%20auto%3B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dcolor%3A%20%23DDDDDD%3B%0Aborder%2Dstyle%3A%20outset%3B%0Aborder%2Dcollapse%3A%20collapse%3B%0A%7D%0Atable%20th%20%7B%0Aborder%2Dwidth%3A%202px%3B%0Apadding%3A%205px%3B%0Aborder%2Dstyle%3A%20inset%3B%0A%7D%0Atable%20td%20%7B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dstyle%3A%20inset%3B%0Aline%2Dheight%3A%2018px%3B%0Apadding%3A%205px%205px%3B%0A%7D%0Atable%2C%20table%20th%2C%20table%20td%20%7B%0Aborder%2Dleft%2Dstyle%3A%20none%3B%0Aborder%2Dright%2Dstyle%3A%20none%3B%0A%7D%0Atable%20thead%2C%20table%20tr%2Eeven%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Ap%20%7B%0Amargin%3A%200%2E5em%200%3B%0A%7D%0Ablockquote%20%7B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Apadding%3A%200%2E25em%200%2E75em%3B%0A%7D%0Ahr%20%7B%0Aborder%2Dstyle%3A%20solid%3B%0Aborder%3A%20none%3B%0Aborder%2Dtop%3A%201px%20solid%20%23777%3B%0Amargin%3A%2028px%200%3B%0A%7D%0Adl%20%7B%0Amargin%2Dleft%3A%200%3B%0A%7D%0Adl%20dd%20%7B%0Amargin%2Dbottom%3A%2013px%3B%0Amargin%2Dleft%3A%2013px%3B%0A%7D%0Adl%20dt%20%7B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Aul%20%7B%0Amargin%2Dtop%3A%200%3B%0A%7D%0Aul%20li%20%7B%0Alist%2Dstyle%3A%20circle%20outside%3B%0A%7D%0Aul%20ul%20%7B%0Amargin%2Dbottom%3A%200%3B%0A%7D%0Apre%2C%20code%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0Aborder%2Dradius%3A%203px%3B%0Acolor%3A%20%23333%3B%0Awhite%2Dspace%3A%20pre%2Dwrap%3B%20%0A%7D%0Apre%20%7B%0Aborder%2Dradius%3A%203px%3B%0Amargin%3A%205px%200px%2010px%200px%3B%0Apadding%3A%2010px%3B%0A%7D%0Apre%3Anot%28%5Bclass%5D%29%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Acode%20%7B%0Afont%2Dfamily%3A%20Consolas%2C%20Monaco%2C%20%27Courier%20New%27%2C%20monospace%3B%0Afont%2Dsize%3A%2085%25%3B%0A%7D%0Ap%20%3E%20code%2C%20li%20%3E%20code%20%7B%0Apadding%3A%202px%200px%3B%0A%7D%0Adiv%2Efigure%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0Aimg%20%7B%0Abackground%2Dcolor%3A%20%23FFFFFF%3B%0Apadding%3A%202px%3B%0Aborder%3A%201px%20solid%20%23DDDDDD%3B%0Aborder%2Dradius%3A%203px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Amargin%3A%200%205px%3B%0A%7D%0Ah1%20%7B%0Amargin%2Dtop%3A%200%3B%0Afont%2Dsize%3A%2035px%3B%0Aline%2Dheight%3A%2040px%3B%0A%7D%0Ah2%20%7B%0Aborder%2Dbottom%3A%204px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Apadding%2Dbottom%3A%202px%3B%0Afont%2Dsize%3A%20145%25%3B%0A%7D%0Ah3%20%7B%0Aborder%2Dbottom%3A%202px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Afont%2Dsize%3A%20120%25%3B%0A%7D%0Ah4%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23f7f7f7%3B%0Amargin%2Dleft%3A%208px%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Ah5%2C%20h6%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23ccc%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Aa%20%7B%0Acolor%3A%20%230033dd%3B%0Atext%2Ddecoration%3A%20none%3B%0A%7D%0Aa%3Ahover%20%7B%0Acolor%3A%20%236666ff%3B%20%7D%0Aa%3Avisited%20%7B%0Acolor%3A%20%23800080%3B%20%7D%0Aa%3Avisited%3Ahover%20%7B%0Acolor%3A%20%23BB00BB%3B%20%7D%0Aa%5Bhref%5E%3D%22http%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0Aa%5Bhref%5E%3D%22https%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0A%0Acode%20%3E%20span%2Ekw%20%7B%20color%3A%20%23555%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Edt%20%7B%20color%3A%20%23902000%3B%20%7D%20%0Acode%20%3E%20span%2Edv%20%7B%20color%3A%20%2340a070%3B%20%7D%20%0Acode%20%3E%20span%2Ebn%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Efl%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Ech%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Est%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Eco%20%7B%20color%3A%20%23888888%3B%20font%2Dstyle%3A%20italic%3B%20%7D%20%0Acode%20%3E%20span%2Eot%20%7B%20color%3A%20%23007020%3B%20%7D%20%0Acode%20%3E%20span%2Eal%20%7B%20color%3A%20%23ff0000%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Efu%20%7B%20color%3A%20%23900%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Eer%20%7B%20color%3A%20%23a61717%3B%20background%2Dcolor%3A%20%23e3d2d2%3B%20%7D%20%0A" type="text/css" />
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">Examples produced by chlorpromazineR</h1>
+
+
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(chlorpromazineR)</span></code></pre></div>
+<p>For a walkthrough on this package’s functions and how to use them, see the walkthrough vignette. The purpose of this vignette is to exhibit the antipsychotics included by the conversion keys and their dose equivalents.</p>
+<div id="gardner-2010" class="section level2">
+<h2>Gardner 2010</h2>
+<p>For the reference, see <code>help(gardner2010)</code>.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>data_gardner_oral_names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Amisulpride&quot;</span>, <span class="st">&quot;Aripiprazole&quot;</span>, <span class="st">&quot;Benperidol&quot;</span>, <span class="st">&quot;Chlorpromazine&quot;</span>,</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;Clopenthixol&quot;</span>, <span class="st">&quot;Clorprothixene&quot;</span>, <span class="st">&quot;Clotiapine&quot;</span>, <span class="st">&quot;Clozapine&quot;</span>,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;Droperidol&quot;</span>, <span class="st">&quot;Flupenthixol&quot;</span>, <span class="st">&quot;Fluphenazine&quot;</span>, <span class="st">&quot;Haloperidol&quot;</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;Levomepromazine&quot;</span>, <span class="st">&quot;Loxapine&quot;</span>, <span class="st">&quot;Mesoridazine&quot;</span>, </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;Methotrimeprazine&quot;</span>, <span class="st">&quot;Molindone&quot;</span>, <span class="st">&quot;Olanzapine&quot;</span>, <span class="st">&quot;Oxypertine&quot;</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;Paliperidone&quot;</span>, <span class="st">&quot;Pericyazine&quot;</span>, <span class="st">&quot;Perphenazine&quot;</span>, <span class="st">&quot;Pimozide&quot;</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;Prochlorperazine&quot;</span>, <span class="st">&quot;Quetiapine&quot;</span>, <span class="st">&quot;Remoxipride&quot;</span>, <span class="st">&quot;Risperidone&quot;</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;Sertindole&quot;</span>, <span class="st">&quot;Sulpiride&quot;</span>, <span class="st">&quot;Thioridazine&quot;</span>, <span class="st">&quot;Thiothixene&quot;</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;Trifluoperazine&quot;</span>, <span class="st">&quot;Trifluperidol&quot;</span>, <span class="st">&quot;Triflupromazine&quot;</span>,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;Ziprasidone&quot;</span>, <span class="st">&quot;Zotepine&quot;</span>, <span class="st">&quot;Zuclopenthixol&quot;</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>data_gardner_oral_median <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">700</span>, <span class="dv">30</span>, <span class="dv">5</span>, <span class="dv">600</span>, <span class="dv">60</span>, <span class="dv">500</span>, <span class="dv">100</span>, <span class="dv">400</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">10</span>, <span class="dv">400</span>, </span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>                              <span class="dv">60</span>, <span class="dv">300</span>, <span class="dv">300</span>, <span class="dv">100</span>, <span class="dv">20</span>, <span class="dv">240</span>, <span class="dv">9</span>, <span class="dv">50</span>, <span class="dv">30</span>, <span class="dv">8</span>, <span class="dv">88</span>, <span class="dv">750</span>, <span class="dv">212</span>, <span class="dv">6</span>, </span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>                              <span class="dv">20</span>, <span class="dv">800</span>, <span class="dv">500</span>, <span class="dv">30</span>, <span class="dv">20</span>, <span class="dv">2</span>, <span class="dv">100</span>, <span class="dv">160</span>, <span class="dv">300</span>, <span class="dv">50</span>)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>data_gardner_oral <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">ap =</span> data_gardner_oral_names, </span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>                                <span class="at">dose =</span> data_gardner_oral_median)</span></code></pre></div>
+</div>
+<div id="oral-route" class="section level2">
+<h2>Oral route</h2>
+<div id="equivalent-to-olanzapine-20-mg-cpz-600-mg" class="section level3">
+<h3>Equivalent to olanzapine 20 mg (CPZ 600 mg)</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">to_ap</span>(data_gardner_oral, <span class="at">convert_to_ap =</span> <span class="st">&quot;olanzapine&quot;</span>, <span class="at">ap_label =</span> <span class="st">&quot;ap&quot;</span>, </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">dose_label =</span> <span class="st">&quot;dose&quot;</span>, <span class="at">route =</span> <span class="st">&quot;oral&quot;</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                   ap dose cpz_conv_factor cpz_eq ap_eq</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1        amisulpride  700       0.8571429    600    20</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2       aripiprazole   30      20.0000000    600    20</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3         benperidol    5     120.0000000    600    20</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4     chlorpromazine  600       1.0000000    600    20</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5       clopenthixol   60      10.0000000    600    20</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6     clorprothixene  500       1.2000000    600    20</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7         clotiapine  100       6.0000000    600    20</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8          clozapine  400       1.5000000    600    20</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9         droperidol   10      60.0000000    600    20</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10      flupenthixol   10      60.0000000    600    20</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11      fluphenazine   12      50.0000000    600    20</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 12       haloperidol   10      60.0000000    600    20</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 13   levomepromazine  400       1.5000000    600    20</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 14          loxapine   60      10.0000000    600    20</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 15      mesoridazine  300       2.0000000    600    20</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 16 methotrimeprazine  300       2.0000000    600    20</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 17         molindone  100       6.0000000    600    20</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 18        olanzapine   20      30.0000000    600    20</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 19        oxypertine  240       2.5000000    600    20</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 20      paliperidone    9      66.6666667    600    20</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 21       pericyazine   50      12.0000000    600    20</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 22      perphenazine   30      20.0000000    600    20</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 23          pimozide    8      75.0000000    600    20</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 24  prochlorperazine   88       6.8181818    600    20</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 25        quetiapine  750       0.8000000    600    20</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 26       remoxipride  212       2.8301887    600    20</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 27       risperidone    6     100.0000000    600    20</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 28        sertindole   20      30.0000000    600    20</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 29         sulpiride  800       0.7500000    600    20</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 30      thioridazine  500       1.2000000    600    20</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 31       thiothixene   30      20.0000000    600    20</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 32   trifluoperazine   20      30.0000000    600    20</span></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 33     trifluperidol    2     300.0000000    600    20</span></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 34   triflupromazine  100       6.0000000    600    20</span></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 35       ziprasidone  160       3.7500000    600    20</span></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 36          zotepine  300       2.0000000    600    20</span></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 37    zuclopenthixol   50      12.0000000    600    20</span></span></code></pre></div>
+</div>
+<div id="equivalent-to-chlorpromazine-100-mg" class="section level3">
+<h3>Equivalent to chlorpromazine 100 mg</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>data_gardner_oral_median_cpz100 <span class="ot">&lt;-</span> data_gardner_oral_median <span class="sc">/</span> <span class="dv">6</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>data_gardner_oral_cpz100 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">ap =</span> data_gardner_oral_names,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>                                       <span class="at">dose=</span>data_gardner_oral_median_cpz100)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">to_ap</span>(data_gardner_oral_cpz100, <span class="at">convert_to_ap =</span> <span class="st">&quot;olanzapine&quot;</span>, </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">ap_label =</span> <span class="st">&quot;ap&quot;</span>, <span class="at">dose_label =</span> <span class="st">&quot;dose&quot;</span>, <span class="at">route =</span> <span class="st">&quot;oral&quot;</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                   ap        dose cpz_conv_factor cpz_eq    ap_eq</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1        amisulpride 116.6666667       0.8571429    100 3.333333</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2       aripiprazole   5.0000000      20.0000000    100 3.333333</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3         benperidol   0.8333333     120.0000000    100 3.333333</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4     chlorpromazine 100.0000000       1.0000000    100 3.333333</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5       clopenthixol  10.0000000      10.0000000    100 3.333333</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6     clorprothixene  83.3333333       1.2000000    100 3.333333</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7         clotiapine  16.6666667       6.0000000    100 3.333333</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8          clozapine  66.6666667       1.5000000    100 3.333333</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9         droperidol   1.6666667      60.0000000    100 3.333333</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10      flupenthixol   1.6666667      60.0000000    100 3.333333</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11      fluphenazine   2.0000000      50.0000000    100 3.333333</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 12       haloperidol   1.6666667      60.0000000    100 3.333333</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 13   levomepromazine  66.6666667       1.5000000    100 3.333333</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 14          loxapine  10.0000000      10.0000000    100 3.333333</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 15      mesoridazine  50.0000000       2.0000000    100 3.333333</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 16 methotrimeprazine  50.0000000       2.0000000    100 3.333333</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 17         molindone  16.6666667       6.0000000    100 3.333333</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 18        olanzapine   3.3333333      30.0000000    100 3.333333</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 19        oxypertine  40.0000000       2.5000000    100 3.333333</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 20      paliperidone   1.5000000      66.6666667    100 3.333333</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 21       pericyazine   8.3333333      12.0000000    100 3.333333</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 22      perphenazine   5.0000000      20.0000000    100 3.333333</span></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 23          pimozide   1.3333333      75.0000000    100 3.333333</span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 24  prochlorperazine  14.6666667       6.8181818    100 3.333333</span></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 25        quetiapine 125.0000000       0.8000000    100 3.333333</span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 26       remoxipride  35.3333333       2.8301887    100 3.333333</span></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 27       risperidone   1.0000000     100.0000000    100 3.333333</span></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 28        sertindole   3.3333333      30.0000000    100 3.333333</span></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 29         sulpiride 133.3333333       0.7500000    100 3.333333</span></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 30      thioridazine  83.3333333       1.2000000    100 3.333333</span></span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 31       thiothixene   5.0000000      20.0000000    100 3.333333</span></span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 32   trifluoperazine   3.3333333      30.0000000    100 3.333333</span></span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 33     trifluperidol   0.3333333     300.0000000    100 3.333333</span></span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 34   triflupromazine  16.6666667       6.0000000    100 3.333333</span></span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 35       ziprasidone  26.6666667       3.7500000    100 3.333333</span></span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 36          zotepine  50.0000000       2.0000000    100 3.333333</span></span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 37    zuclopenthixol   8.3333333      12.0000000    100 3.333333</span></span></code></pre></div>
+</div>
+</div>
+<div id="short-acting-injectables" class="section level2">
+<h2>Short-acting injectables</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>data_gardner_sai_names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Chlorpromazine HCl&quot;</span>, <span class="st">&quot;Clotiapine injectable&quot;</span>,</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;Fluphenazine HCl&quot;</span>, <span class="st">&quot;Haloperidol lactate&quot;</span>,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;Loxapine HCl&quot;</span>, <span class="st">&quot;Mesoridazine besylate&quot;</span>,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;Olanzapine tartrate&quot;</span>, <span class="st">&quot;Perphenazine USP&quot;</span>,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;Prochlorperazine mesylate&quot;</span>, <span class="st">&quot;Promazine HCl&quot;</span>,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;Trifluoperazine HCl&quot;</span>, <span class="st">&quot;Triflupromazine HCl&quot;</span>,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;Ziprasidone mesylate&quot;</span>, <span class="st">&quot;Zuclopenthixol acetate&quot;</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>data_gardner_sai_median <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">40</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">25</span>, <span class="dv">100</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">22</span>, <span class="dv">100</span>, </span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>                             <span class="dv">5</span>, <span class="dv">60</span>, <span class="dv">20</span>, <span class="dv">50</span>)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>data_gardner_sai <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">ap =</span> data_gardner_sai_names, </span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>                               <span class="at">dose =</span> data_gardner_sai_median)</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="fu">to_cpz</span>(data_gardner_sai, <span class="at">key=</span>gardner2010_withsai, <span class="at">ap_label =</span> <span class="st">&quot;ap&quot;</span>, </span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">dose_label =</span> <span class="st">&quot;dose&quot;</span>, <span class="at">route =</span> <span class="st">&quot;sai&quot;</span>)</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                           ap dose cpz_conv_factor cpz_eq</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1         chlorpromazine hcl  100        1.000000    100</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2      clotiapine injectable   40        2.500000    100</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3           fluphenazine hcl    5       20.000000    100</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4        haloperidol lactate    5       20.000000    100</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5               loxapine hcl   25        4.000000    100</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6      mesoridazine besylate  100        1.000000    100</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7        olanzapine tartrate   10       10.000000    100</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8           perphenazine usp   10       10.000000    100</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9  prochlorperazine mesylate   22        4.545455    100</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10             promazine hcl  100        1.000000    100</span></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11       trifluoperazine hcl    5       20.000000    100</span></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 12       triflupromazine hcl   60        1.666667    100</span></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 13      ziprasidone mesylate   20        5.000000    100</span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 14    zuclopenthixol acetate   50        2.000000    100</span></span></code></pre></div>
+<div id="equivalent-to-haloperidol-5-mg-im" class="section level3">
+<h3>Equivalent to haloperidol 5 mg IM</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">to_ap</span>(data_gardner_sai, <span class="at">key=</span>gardner2010_withsai, </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">convert_to_ap =</span> <span class="st">&quot;haloperidol lactate&quot;</span>, </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>      <span class="at">ap_label =</span> <span class="st">&quot;ap&quot;</span>, <span class="at">dose_label =</span> <span class="st">&quot;dose&quot;</span>, <span class="at">route =</span> <span class="st">&quot;sai&quot;</span>,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">convert_to_route =</span> <span class="st">&quot;sai&quot;</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                           ap dose cpz_conv_factor cpz_eq ap_eq</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1         chlorpromazine hcl  100        1.000000    100     5</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2      clotiapine injectable   40        2.500000    100     5</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3           fluphenazine hcl    5       20.000000    100     5</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4        haloperidol lactate    5       20.000000    100     5</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5               loxapine hcl   25        4.000000    100     5</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6      mesoridazine besylate  100        1.000000    100     5</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7        olanzapine tartrate   10       10.000000    100     5</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8           perphenazine usp   10       10.000000    100     5</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9  prochlorperazine mesylate   22        4.545455    100     5</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10             promazine hcl  100        1.000000    100     5</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11       trifluoperazine hcl    5       20.000000    100     5</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 12       triflupromazine hcl   60        1.666667    100     5</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 13      ziprasidone mesylate   20        5.000000    100     5</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 14    zuclopenthixol acetate   50        2.000000    100     5</span></span></code></pre></div>
+</div>
+</div>
+<div id="long-acting-injectables" class="section level2">
+<h2>Long-acting injectables</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>data_gardner_lai_names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Clopenthixol decanoate&quot;</span>, <span class="st">&quot;Flupenthixol decanoate&quot;</span>, </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;Fluphenazine decanoate&quot;</span>, <span class="st">&quot;Fluphenazine enanthate&quot;</span>, </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;Fluspirilene&quot;</span>, <span class="st">&quot;Haloperidol decanoate&quot;</span>, </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;Perphenazine enanthate&quot;</span>, <span class="st">&quot;Pipotiazine palmitate&quot;</span>, </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;Risperidone microspheres&quot;</span>, <span class="st">&quot;Zuclopenthixol decanoate&quot;</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>data_gardner_lai_median <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">300</span>, <span class="dv">40</span>, <span class="dv">25</span>, <span class="dv">25</span>, <span class="dv">6</span>, <span class="dv">150</span>, <span class="dv">100</span>, <span class="dv">100</span>, <span class="dv">50</span>, <span class="dv">200</span>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>data_gardner_lai_q <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">14</span>, <span class="dv">14</span>, <span class="dv">14</span>, <span class="dv">14</span>, <span class="dv">7</span>, <span class="dv">28</span>, <span class="dv">14</span>, <span class="dv">28</span>, <span class="dv">14</span>, <span class="dv">14</span>)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>data_gardner_lai <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">ap =</span> data_gardner_lai_names,</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>                               <span class="at">dose =</span> data_gardner_lai_median,</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>                               <span class="at">q =</span> data_gardner_lai_q)</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="fu">to_cpz</span>(data_gardner_lai, <span class="at">key=</span>gardner2010, <span class="at">ap_label =</span> <span class="st">&quot;ap&quot;</span>, </span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">dose_label =</span> <span class="st">&quot;dose&quot;</span>, <span class="at">route =</span> <span class="st">&quot;lai&quot;</span>, <span class="at">q_label =</span> <span class="st">&quot;q&quot;</span>)</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                          ap dose  q cpz_conv_factor cpz_eq</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1    clopenthixol decanoate  300 14              28    600</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2    flupenthixol decanoate   40 14             210    600</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3    fluphenazine decanoate   25 14             336    600</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4    fluphenazine enanthate   25 14             336    600</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5              fluspirilene    6  7             700    600</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6     haloperidol decanoate  150 28             112    600</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7    perphenazine enanthate  100 14              84    600</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8     pipotiazine palmitate  100 28             168    600</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9  risperidone microspheres   50 14             168    600</span></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10 zuclopenthixol decanoate  200 14              42    600</span></span></code></pre></div>
+</div>
+<div id="davis-1974" class="section level2">
+<h2>Davis 1974</h2>
+<p>For the reference, see <code>help(davis1974)</code>.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>data_davis_names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Chlorpromazine&quot;</span>, <span class="st">&quot;Triflupromazine&quot;</span>, <span class="st">&quot;Thioridazine&quot;</span>, <span class="st">&quot;Prochlorperazine&quot;</span>,</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;Perphenazine&quot;</span>, <span class="st">&quot;Fluphenazine&quot;</span>, <span class="st">&quot;Trifluoperazine&quot;</span>, <span class="st">&quot;Acetophenazine&quot;</span>, </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;Carphenazine&quot;</span>, <span class="st">&quot;Butaperazine&quot;</span>, <span class="st">&quot;Mesoridazine&quot;</span>, <span class="st">&quot;Piperacetazine&quot;</span>, </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;Haloperidol&quot;</span>, <span class="st">&quot;Chlorprothixene&quot;</span>, <span class="st">&quot;Thiothixene&quot;</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>data_davis_doses <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="fl">28.4</span>, <span class="fl">95.3</span>, <span class="fl">14.3</span>, <span class="fl">8.9</span>, <span class="fl">1.2</span>, <span class="fl">2.8</span>, <span class="fl">23.5</span>, <span class="fl">24.3</span>, <span class="fl">8.9</span>, <span class="fl">55.3</span>, <span class="fl">10.5</span>, <span class="fl">1.6</span>, </span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>                     <span class="fl">43.9</span>, <span class="fl">5.2</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>data_davis_oral <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">ap =</span> data_davis_names, </span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>                              <span class="at">dose =</span> data_davis_doses)</span></code></pre></div>
+<div id="oral" class="section level3">
+<h3>Oral</h3>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">to_cpz</span>(data_davis_oral, <span class="at">ap_label =</span> <span class="st">&quot;ap&quot;</span>, </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">dose_label =</span> <span class="st">&quot;dose&quot;</span>, <span class="at">route =</span> <span class="st">&quot;oral&quot;</span>, <span class="at">key=</span>davis1974)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                  ap  dose cpz_conv_factor cpz_eq</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1    chlorpromazine 100.0        1.000000    100</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2   triflupromazine  28.4        3.521127    100</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3      thioridazine  95.3        1.049318    100</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4  prochlorperazine  14.3        6.993007    100</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5      perphenazine   8.9       11.235955    100</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6      fluphenazine   1.2       83.333333    100</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7   trifluoperazine   2.8       35.714286    100</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8    acetophenazine  23.5        4.255319    100</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9      carphenazine  24.3        4.115226    100</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10     butaperazine   8.9       11.235955    100</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11     mesoridazine  55.3        1.808318    100</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 12   piperacetazine  10.5        9.523810    100</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 13      haloperidol   1.6       62.500000    100</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 14  chlorprothixene  43.9        2.277904    100</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 15      thiothixene   5.2       19.230769    100</span></span></code></pre></div>
+</div>
+<div id="short-acting-injectable" class="section level3">
+<h3>Short acting injectable</h3>
+<p>The Davis ket converts parenteral (SAI) to oral chlorpromazine equivalents on the basis of the statement in the text that oral is assumed to be 3x the potency of oral.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">to_cpz</span>(data_davis_oral, <span class="at">ap_label =</span> <span class="st">&quot;ap&quot;</span>, </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">dose_label =</span> <span class="st">&quot;dose&quot;</span>, <span class="at">route =</span> <span class="st">&quot;sai&quot;</span>, <span class="at">key=</span>davis1974)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                  ap  dose cpz_conv_factor cpz_eq</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1    chlorpromazine 100.0        3.000000    300</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2   triflupromazine  28.4       10.563380    300</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3      thioridazine  95.3        3.147954    300</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4  prochlorperazine  14.3       20.979021    300</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5      perphenazine   8.9       33.707865    300</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6      fluphenazine   1.2      250.000000    300</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7   trifluoperazine   2.8      107.142857    300</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8    acetophenazine  23.5       12.765957    300</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9      carphenazine  24.3       12.345679    300</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10     butaperazine   8.9       33.707865    300</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11     mesoridazine  55.3        5.424955    300</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 12   piperacetazine  10.5       28.571429    300</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 13      haloperidol   1.6      187.500000    300</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 14  chlorprothixene  43.9        6.833713    300</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 15      thiothixene   5.2       57.692308    300</span></span></code></pre></div>
+</div>
+</div>
+<div id="leucht-2016" class="section level2">
+<h2>Leucht 2016</h2>
+<p>For the reference, see <code>help(leucht2016)</code>.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>leucht_names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Acepromazine&quot;</span>, <span class="st">&quot;Acetophenazine&quot;</span>, <span class="st">&quot;Amisulpride&quot;</span>, <span class="st">&quot;Aripiprazole&quot;</span>, </span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Asenapine&quot;</span>, <span class="st">&quot;Benperidol&quot;</span>, <span class="st">&quot;Bromperidol&quot;</span>, <span class="st">&quot;Butaperazine&quot;</span>, <span class="st">&quot;Cariprazine&quot;</span>,</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Chlorproethazine&quot;</span>, <span class="st">&quot;Chlorpromazine&quot;</span>, <span class="st">&quot;Chlorprothixene&quot;</span>, <span class="st">&quot;Clopenthixol&quot;</span>,</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Clotiapine&quot;</span>, <span class="st">&quot;Clozapine&quot;</span>, <span class="st">&quot;Cyamemazine&quot;</span>, <span class="st">&quot;Dixyrazine&quot;</span>, <span class="st">&quot;Droperidol&quot;</span>,</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Fluanisone&quot;</span>, <span class="st">&quot;Flupentixol&quot;</span>, <span class="st">&quot;Fluphenazine&quot;</span>, <span class="st">&quot;Fluspirilene&quot;</span>, <span class="st">&quot;Haloperidol&quot;</span>,</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Iloperidone&quot;</span>, <span class="st">&quot;Levomepromazine&quot;</span>, <span class="st">&quot;Levosulpiride&quot;</span>, <span class="st">&quot;Loxapine&quot;</span>, <span class="st">&quot;Lurasidone&quot;</span>,</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Melperone&quot;</span>, <span class="st">&quot;Mesoridazine&quot;</span>, <span class="st">&quot;Molindone&quot;</span>, <span class="st">&quot;Moperone&quot;</span>, <span class="st">&quot;Mosapramine&quot;</span>,</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Olanzapine&quot;</span>, <span class="st">&quot;Oxypertine&quot;</span>, <span class="st">&quot;Paliperidone&quot;</span>, <span class="st">&quot;Penfluridol&quot;</span>, <span class="st">&quot;Perazine&quot;</span>,</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Periciazine&quot;</span>, <span class="st">&quot;Perphenazine&quot;</span>, <span class="st">&quot;Pimozide&quot;</span>, <span class="st">&quot;Pipamperone&quot;</span>, <span class="st">&quot;Pipotiazine&quot;</span>,</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Prochlorperazine&quot;</span>, <span class="st">&quot;Promazine&quot;</span>, <span class="st">&quot;Prothipendyl&quot;</span>, <span class="st">&quot;Quetiapine&quot;</span>, <span class="st">&quot;Remoxipride&quot;</span>,</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Risperidone&quot;</span>, <span class="st">&quot;Sertindole&quot;</span>, <span class="st">&quot;Sulpiride&quot;</span>, <span class="st">&quot;Sultopride&quot;</span>, <span class="st">&quot;Thiopropazate&quot;</span>,</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Thioproperazine&quot;</span>, <span class="st">&quot;Thioridazine&quot;</span>, <span class="st">&quot;Tiapride&quot;</span>, <span class="st">&quot;Tiotixene&quot;</span>, </span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Trifluoperazine&quot;</span>, <span class="st">&quot;Trifluperidol&quot;</span>, <span class="st">&quot;Triflupromazine&quot;</span>, <span class="st">&quot;Veralipride&quot;</span>,</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Ziprasidone&quot;</span>, <span class="st">&quot;Zotepine&quot;</span>, <span class="st">&quot;Zuclopenthixol&quot;</span>)</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>leucht_DDD_oral <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">50</span>, <span class="dv">400</span>, <span class="dv">15</span>, <span class="dv">20</span>, <span class="fl">1.5</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="dv">300</span>, <span class="dv">300</span>, <span class="dv">100</span>, <span class="dv">80</span>, <span class="dv">300</span>, <span class="cn">NA</span>, </span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>                     <span class="dv">50</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="dv">6</span>, <span class="dv">10</span>, <span class="cn">NA</span>, <span class="dv">8</span>, <span class="cn">NA</span>, <span class="dv">300</span>, <span class="dv">400</span>, <span class="dv">100</span>, <span class="dv">60</span>, <span class="dv">300</span>, <span class="dv">200</span>, <span class="dv">50</span>, <span class="dv">20</span>, <span class="cn">NA</span>, </span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>                     <span class="dv">10</span>, <span class="dv">120</span>, <span class="dv">6</span>, <span class="dv">6</span>, <span class="dv">100</span>, <span class="dv">50</span>, <span class="dv">30</span>, <span class="dv">4</span>, <span class="dv">200</span>, <span class="dv">10</span>, <span class="dv">100</span>, <span class="dv">300</span>, <span class="dv">240</span>, <span class="dv">400</span>, <span class="dv">300</span>, <span class="dv">5</span>, <span class="dv">16</span>, </span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>                     <span class="dv">800</span>, <span class="dv">1200</span>, <span class="dv">60</span>, <span class="dv">75</span>, <span class="dv">300</span>, <span class="dv">400</span>, <span class="dv">30</span>, <span class="dv">20</span>, <span class="dv">2</span>, <span class="dv">100</span>, <span class="cn">NA</span>, <span class="dv">80</span>, <span class="dv">200</span>, <span class="dv">30</span>)</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>leucht_DDD_sai <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">50</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="dv">15</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="dv">10</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="dv">100</span>, <span class="dv">50</span>, <span class="dv">100</span>, <span class="dv">80</span>, <span class="dv">300</span>, <span class="cn">NA</span>, <span class="dv">30</span>, </span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>                    <span class="fl">2.5</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="dv">8</span>, <span class="cn">NA</span>, <span class="dv">100</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="dv">300</span>, <span class="dv">200</span>, <span class="cn">NA</span>, <span class="dv">20</span>, <span class="cn">NA</span>, <span class="dv">10</span>, </span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>                    <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="dv">100</span>, <span class="dv">20</span>, <span class="dv">10</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="dv">50</span>, <span class="dv">100</span>, <span class="dv">240</span>, <span class="cn">NA</span>, <span class="dv">300</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, </span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>                    <span class="dv">800</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="dv">20</span>, <span class="cn">NA</span>, <span class="dv">400</span>, <span class="cn">NA</span>, <span class="dv">8</span>, <span class="cn">NA</span>, <span class="dv">100</span>, <span class="cn">NA</span>, <span class="dv">40</span>, <span class="cn">NA</span>, <span class="dv">30</span>)</span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>leucht_DDD_lai <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="fl">3.3</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, </span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>                    <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="dv">4</span>, <span class="dv">1</span>, <span class="fl">0.7</span>, <span class="fl">3.3</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="fl">10.0</span>, </span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>                    <span class="cn">NA</span>, <span class="fl">2.5</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="fl">7.0</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="dv">5</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="fl">2.7</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, </span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>                    <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="dv">15</span>)</span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>data_leucht_DDD_oral <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">ap =</span> leucht_names, </span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>                              <span class="at">dose =</span> leucht_DDD_oral)</span>
+<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a>data_leucht_DDD_sai <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">ap =</span> leucht_names, </span>
+<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a>                              <span class="at">dose =</span> leucht_DDD_sai)</span>
+<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a><span class="co"># pretend that all are given q 14 days</span></span>
+<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a>data_leucht_DDD_lai <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">ap =</span> leucht_names, </span>
+<span id="cb11-42"><a href="#cb11-42" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">dose =</span> (leucht_DDD_lai<span class="sc">*</span><span class="dv">14</span>), </span>
+<span id="cb11-43"><a href="#cb11-43" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">q =</span> <span class="fu">rep</span>(<span class="dv">14</span>, <span class="dv">64</span>))</span>
+<span id="cb11-44"><a href="#cb11-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-45"><a href="#cb11-45" aria-hidden="true" tabindex="-1"></a>data_leucht_DDD_oral <span class="ot">&lt;-</span> data_leucht_DDD_oral[<span class="sc">!</span><span class="fu">is.na</span>(data_leucht_DDD_oral<span class="sc">$</span>dose),]</span>
+<span id="cb11-46"><a href="#cb11-46" aria-hidden="true" tabindex="-1"></a>data_leucht_DDD_sai <span class="ot">&lt;-</span> data_leucht_DDD_sai[<span class="sc">!</span><span class="fu">is.na</span>(data_leucht_DDD_sai<span class="sc">$</span>dose),]</span>
+<span id="cb11-47"><a href="#cb11-47" aria-hidden="true" tabindex="-1"></a>data_leucht_DDD_lai <span class="ot">&lt;-</span> data_leucht_DDD_lai[<span class="sc">!</span><span class="fu">is.na</span>(data_leucht_DDD_lai<span class="sc">$</span>dose),]</span>
+<span id="cb11-48"><a href="#cb11-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-49"><a href="#cb11-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-50"><a href="#cb11-50" aria-hidden="true" tabindex="-1"></a><span class="fu">to_ap</span>(data_leucht_DDD_oral, <span class="at">ap_label =</span> <span class="st">&quot;ap&quot;</span>, <span class="at">dose_label =</span> <span class="st">&quot;dose&quot;</span>, </span>
+<span id="cb11-51"><a href="#cb11-51" aria-hidden="true" tabindex="-1"></a>      <span class="at">route =</span> <span class="st">&quot;oral&quot;</span>, <span class="at">key=</span>leucht2016, <span class="at">convert_to_ap =</span> <span class="st">&quot;olanzapine&quot;</span>)</span>
+<span id="cb11-52"><a href="#cb11-52" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                  ap   dose cpz_conv_factor   cpz_eq     ap_eq</span></span>
+<span id="cb11-53"><a href="#cb11-53" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1      acepromazine  100.0       3.0003000 300.0300  9.990999</span></span>
+<span id="cb11-54"><a href="#cb11-54" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2    acetophenazine   50.0       5.9988002 299.9400  9.988002</span></span>
+<span id="cb11-55"><a href="#cb11-55" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3       amisulpride  400.0       0.7500188 300.0075  9.990250</span></span>
+<span id="cb11-56"><a href="#cb11-56" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4      aripiprazole   15.0      20.0000000 300.0000  9.990000</span></span>
+<span id="cb11-57"><a href="#cb11-57" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5         asenapine   20.0      14.9925037 299.8501  9.985007</span></span>
+<span id="cb11-58"><a href="#cb11-58" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6        benperidol    1.5     200.0000000 300.0000  9.990000</span></span>
+<span id="cb11-59"><a href="#cb11-59" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7       bromperidol   10.0      30.0300300 300.3003 10.000000</span></span>
+<span id="cb11-60"><a href="#cb11-60" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8      butaperazine   10.0      30.0300300 300.3003 10.000000</span></span>
+<span id="cb11-61"><a href="#cb11-61" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11   chlorpromazine  300.0       1.0000000 300.0000  9.990000</span></span>
+<span id="cb11-62"><a href="#cb11-62" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 12  chlorprothixene  300.0       1.0000000 300.0000  9.990000</span></span>
+<span id="cb11-63"><a href="#cb11-63" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 13     clopenthixol  100.0       3.0003000 300.0300  9.990999</span></span>
+<span id="cb11-64"><a href="#cb11-64" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 14       clotiapine   80.0       3.7495313 299.9625  9.988751</span></span>
+<span id="cb11-65"><a href="#cb11-65" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 15        clozapine  300.0       1.0000000 300.0000  9.990000</span></span>
+<span id="cb11-66"><a href="#cb11-66" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 17       dixyrazine   50.0       5.9988002 299.9400  9.988002</span></span>
+<span id="cb11-67"><a href="#cb11-67" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 20      flupentixol    6.0      50.0000000 300.0000  9.990000</span></span>
+<span id="cb11-68"><a href="#cb11-68" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 21     fluphenazine   10.0      30.0300300 300.3003 10.000000</span></span>
+<span id="cb11-69"><a href="#cb11-69" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 23      haloperidol    8.0      37.4531835 299.6255  9.977528</span></span>
+<span id="cb11-70"><a href="#cb11-70" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 25  levomepromazine  300.0       1.0000000 300.0000  9.990000</span></span>
+<span id="cb11-71"><a href="#cb11-71" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 26    levosulpiride  400.0       0.7500188 300.0075  9.990250</span></span>
+<span id="cb11-72"><a href="#cb11-72" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 27         loxapine  100.0       3.0003000 300.0300  9.990999</span></span>
+<span id="cb11-73"><a href="#cb11-73" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 28       lurasidone   60.0       5.0000000 300.0000  9.990000</span></span>
+<span id="cb11-74"><a href="#cb11-74" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 29        melperone  300.0       1.0000000 300.0000  9.990000</span></span>
+<span id="cb11-75"><a href="#cb11-75" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 30     mesoridazine  200.0       1.4999250 299.9850  9.989501</span></span>
+<span id="cb11-76"><a href="#cb11-76" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 31        molindone   50.0       5.9988002 299.9400  9.988002</span></span>
+<span id="cb11-77"><a href="#cb11-77" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 32         moperone   20.0      14.9925037 299.8501  9.985007</span></span>
+<span id="cb11-78"><a href="#cb11-78" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 34       olanzapine   10.0      30.0300300 300.3003 10.000000</span></span>
+<span id="cb11-79"><a href="#cb11-79" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 35       oxypertine  120.0       2.5000000 300.0000  9.990000</span></span>
+<span id="cb11-80"><a href="#cb11-80" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 36     paliperidone    6.0      50.0000000 300.0000  9.990000</span></span>
+<span id="cb11-81"><a href="#cb11-81" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 37      penfluridol    6.0      50.0000000 300.0000  9.990000</span></span>
+<span id="cb11-82"><a href="#cb11-82" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 38         perazine  100.0       3.0003000 300.0300  9.990999</span></span>
+<span id="cb11-83"><a href="#cb11-83" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 39      periciazine   50.0       5.9988002 299.9400  9.988002</span></span>
+<span id="cb11-84"><a href="#cb11-84" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 40     perphenazine   30.0      10.0000000 300.0000  9.990000</span></span>
+<span id="cb11-85"><a href="#cb11-85" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 41         pimozide    4.0      75.1879699 300.7519 10.015038</span></span>
+<span id="cb11-86"><a href="#cb11-86" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 42      pipamperone  200.0       1.4999250 299.9850  9.989501</span></span>
+<span id="cb11-87"><a href="#cb11-87" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 43      pipotiazine   10.0      30.0300300 300.3003 10.000000</span></span>
+<span id="cb11-88"><a href="#cb11-88" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 44 prochlorperazine  100.0       3.0003000 300.0300  9.990999</span></span>
+<span id="cb11-89"><a href="#cb11-89" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 45        promazine  300.0       1.0000000 300.0000  9.990000</span></span>
+<span id="cb11-90"><a href="#cb11-90" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 46     prothipendyl  240.0       1.2500000 300.0000  9.990000</span></span>
+<span id="cb11-91"><a href="#cb11-91" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 47       quetiapine  400.0       0.7500188 300.0075  9.990250</span></span>
+<span id="cb11-92"><a href="#cb11-92" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 48      remoxipride  300.0       1.0000000 300.0000  9.990000</span></span>
+<span id="cb11-93"><a href="#cb11-93" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 49      risperidone    5.0      59.8802395 299.4012  9.970060</span></span>
+<span id="cb11-94"><a href="#cb11-94" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 50       sertindole   16.0      18.7617261 300.1876  9.996248</span></span>
+<span id="cb11-95"><a href="#cb11-95" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 51        sulpiride  800.0       0.3749953 299.9963  9.989875</span></span>
+<span id="cb11-96"><a href="#cb11-96" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 52       sultopride 1200.0       0.2500000 300.0000  9.990000</span></span>
+<span id="cb11-97"><a href="#cb11-97" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 53    thiopropazate   60.0       5.0000000 300.0000  9.990000</span></span>
+<span id="cb11-98"><a href="#cb11-98" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 54  thioproperazine   75.0       4.0000000 300.0000  9.990000</span></span>
+<span id="cb11-99"><a href="#cb11-99" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 55     thioridazine  300.0       1.0000000 300.0000  9.990000</span></span>
+<span id="cb11-100"><a href="#cb11-100" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 56         tiapride  400.0       0.7500188 300.0075  9.990250</span></span>
+<span id="cb11-101"><a href="#cb11-101" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 57        tiotixene   30.0      10.0000000 300.0000  9.990000</span></span>
+<span id="cb11-102"><a href="#cb11-102" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 58  trifluoperazine   20.0      14.9925037 299.8501  9.985007</span></span>
+<span id="cb11-103"><a href="#cb11-103" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 59    trifluperidol    2.0     149.2537313 298.5075  9.940299</span></span>
+<span id="cb11-104"><a href="#cb11-104" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 60  triflupromazine  100.0       3.0003000 300.0300  9.990999</span></span>
+<span id="cb11-105"><a href="#cb11-105" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 62      ziprasidone   80.0       3.7495313 299.9625  9.988751</span></span>
+<span id="cb11-106"><a href="#cb11-106" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 63         zotepine  200.0       1.4999250 299.9850  9.989501</span></span>
+<span id="cb11-107"><a href="#cb11-107" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 64   zuclopenthixol   30.0      10.0000000 300.0000  9.990000</span></span>
+<span id="cb11-108"><a href="#cb11-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-109"><a href="#cb11-109" aria-hidden="true" tabindex="-1"></a><span class="fu">to_ap</span>(data_leucht_DDD_sai, <span class="at">ap_label =</span> <span class="st">&quot;ap&quot;</span>, <span class="at">dose_label =</span> <span class="st">&quot;dose&quot;</span>, </span>
+<span id="cb11-110"><a href="#cb11-110" aria-hidden="true" tabindex="-1"></a>      <span class="at">route =</span> <span class="st">&quot;sai&quot;</span>, <span class="at">key=</span>leucht2016, <span class="at">convert_to_ap =</span> <span class="st">&quot;olanzapine&quot;</span>, </span>
+<span id="cb11-111"><a href="#cb11-111" aria-hidden="true" tabindex="-1"></a>      <span class="at">convert_to_route =</span> <span class="st">&quot;sai&quot;</span>)</span>
+<span id="cb11-112"><a href="#cb11-112" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                  ap  dose cpz_conv_factor   cpz_eq     ap_eq</span></span>
+<span id="cb11-113"><a href="#cb11-113" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1      acepromazine  50.0       5.9988002 299.9400  9.988002</span></span>
+<span id="cb11-114"><a href="#cb11-114" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4      aripiprazole  15.0      20.0000000 300.0000  9.990000</span></span>
+<span id="cb11-115"><a href="#cb11-115" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7       bromperidol  10.0      30.0300300 300.3003 10.000000</span></span>
+<span id="cb11-116"><a href="#cb11-116" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11   chlorpromazine 100.0       3.0003000 300.0300  9.990999</span></span>
+<span id="cb11-117"><a href="#cb11-117" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 12  chlorprothixene  50.0       5.9988002 299.9400  9.988002</span></span>
+<span id="cb11-118"><a href="#cb11-118" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 13     clopenthixol 100.0       3.0003000 300.0300  9.990999</span></span>
+<span id="cb11-119"><a href="#cb11-119" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 14       clotiapine  80.0       3.7495313 299.9625  9.988751</span></span>
+<span id="cb11-120"><a href="#cb11-120" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 15        clozapine 300.0       1.0000000 300.0000  9.990000</span></span>
+<span id="cb11-121"><a href="#cb11-121" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 17       dixyrazine  30.0      10.0000000 300.0000  9.990000</span></span>
+<span id="cb11-122"><a href="#cb11-122" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 18       droperidol   2.5     120.4819277 301.2048 10.030120</span></span>
+<span id="cb11-123"><a href="#cb11-123" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 23      haloperidol   8.0      37.4531835 299.6255  9.977528</span></span>
+<span id="cb11-124"><a href="#cb11-124" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 25  levomepromazine 100.0       3.0003000 300.0300  9.990999</span></span>
+<span id="cb11-125"><a href="#cb11-125" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 29        melperone 300.0       1.0000000 300.0000  9.990000</span></span>
+<span id="cb11-126"><a href="#cb11-126" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 30     mesoridazine 200.0       1.4999250 299.9850  9.989501</span></span>
+<span id="cb11-127"><a href="#cb11-127" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 32         moperone  20.0      14.9925037 299.8501  9.985007</span></span>
+<span id="cb11-128"><a href="#cb11-128" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 34       olanzapine  10.0      30.0300300 300.3003 10.000000</span></span>
+<span id="cb11-129"><a href="#cb11-129" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 38         perazine 100.0       3.0003000 300.0300  9.990999</span></span>
+<span id="cb11-130"><a href="#cb11-130" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 39      periciazine  20.0      14.9925037 299.8501  9.985007</span></span>
+<span id="cb11-131"><a href="#cb11-131" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 40     perphenazine  10.0      30.0300300 300.3003 10.000000</span></span>
+<span id="cb11-132"><a href="#cb11-132" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 44 prochlorperazine  50.0       5.9988002 299.9400  9.988002</span></span>
+<span id="cb11-133"><a href="#cb11-133" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 45        promazine 100.0       3.0003000 300.0300  9.990999</span></span>
+<span id="cb11-134"><a href="#cb11-134" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 46     prothipendyl 240.0       1.2500000 300.0000  9.990000</span></span>
+<span id="cb11-135"><a href="#cb11-135" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 48      remoxipride 300.0       1.0000000 300.0000  9.990000</span></span>
+<span id="cb11-136"><a href="#cb11-136" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 51        sulpiride 800.0       0.3749953 299.9963  9.989875</span></span>
+<span id="cb11-137"><a href="#cb11-137" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 54  thioproperazine  20.0      14.9925037 299.8501  9.985007</span></span>
+<span id="cb11-138"><a href="#cb11-138" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 56         tiapride 400.0       0.7500188 300.0075  9.990250</span></span>
+<span id="cb11-139"><a href="#cb11-139" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 58  trifluoperazine   8.0      37.4531835 299.6255  9.977528</span></span>
+<span id="cb11-140"><a href="#cb11-140" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 60  triflupromazine 100.0       3.0003000 300.0300  9.990999</span></span>
+<span id="cb11-141"><a href="#cb11-141" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 62      ziprasidone  40.0       7.5018755 300.0750  9.992498</span></span>
+<span id="cb11-142"><a href="#cb11-142" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 64   zuclopenthixol  30.0      10.0000000 300.0000  9.990000</span></span>
+<span id="cb11-143"><a href="#cb11-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-144"><a href="#cb11-144" aria-hidden="true" tabindex="-1"></a><span class="fu">to_ap</span>(data_leucht_DDD_lai, <span class="at">ap_label =</span> <span class="st">&quot;ap&quot;</span>, <span class="at">dose_label =</span> <span class="st">&quot;dose&quot;</span>, </span>
+<span id="cb11-145"><a href="#cb11-145" aria-hidden="true" tabindex="-1"></a>      <span class="at">route =</span> <span class="st">&quot;lai&quot;</span>, <span class="at">key=</span>leucht2016, <span class="at">convert_to_ap =</span> <span class="st">&quot;olanzapine&quot;</span>, <span class="at">q =</span> <span class="st">&quot;q&quot;</span>)</span>
+<span id="cb11-146"><a href="#cb11-146" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                ap  dose  q cpz_conv_factor   cpz_eq    ap_eq</span></span>
+<span id="cb11-147"><a href="#cb11-147" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7     bromperidol  46.2 14        90.90909 300.0000  9.99000</span></span>
+<span id="cb11-148"><a href="#cb11-148" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 20    flupentixol  56.0 14        75.18797 300.7519 10.01504</span></span>
+<span id="cb11-149"><a href="#cb11-149" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 21   fluphenazine  14.0 14       303.03030 303.0303 10.09091</span></span>
+<span id="cb11-150"><a href="#cb11-150" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 22   fluspirilene   9.8 14       434.78261 304.3478 10.13478</span></span>
+<span id="cb11-151"><a href="#cb11-151" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 23    haloperidol  46.2 14        90.90909 300.0000  9.99000</span></span>
+<span id="cb11-152"><a href="#cb11-152" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 34     olanzapine 140.0 14        30.03003 300.3003 10.00000</span></span>
+<span id="cb11-153"><a href="#cb11-153" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 36   paliperidone  35.0 14       120.48193 301.2048 10.03012</span></span>
+<span id="cb11-154"><a href="#cb11-154" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 40   perphenazine  98.0 14        42.91845 300.4292 10.00429</span></span>
+<span id="cb11-155"><a href="#cb11-155" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 43    pipotiazine  70.0 14        59.88024 299.4012  9.97006</span></span>
+<span id="cb11-156"><a href="#cb11-156" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 49    risperidone  37.8 14       111.11111 300.0000  9.99000</span></span>
+<span id="cb11-157"><a href="#cb11-157" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 64 zuclopenthixol 210.0 14        20.00000 300.0000  9.99000</span></span></code></pre></div>
+</div>
+<div id="woods-2003" class="section level2">
+<h2>Woods 2003</h2>
+<p>For the reference, see <code>help(woods2003)</code>.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>woods_names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;haloperidol&quot;</span>, <span class="st">&quot;risperidone&quot;</span>, <span class="st">&quot;olanzapine&quot;</span>,</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;quetiapine&quot;</span>, <span class="st">&quot;ziprasidone&quot;</span>, <span class="st">&quot;aripiprazole&quot;</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>woods_doses <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">75</span>, <span class="dv">60</span>, <span class="fl">7.5</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>woods_oral <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">ap =</span> woods_names, </span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>                         <span class="at">dose =</span> woods_doses)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="fu">to_ap</span>(woods_oral, <span class="at">route=</span><span class="st">&quot;oral&quot;</span>, <span class="at">ap_label=</span><span class="st">&quot;ap&quot;</span>, </span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">dose=</span><span class="st">&quot;dose&quot;</span>, <span class="at">key=</span>woods2003, </span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">convert_to_ap =</span> <span class="st">&quot;olanzapine&quot;</span>)</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;             ap dose cpz_conv_factor cpz_eq ap_eq</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1  haloperidol  2.0       50.000000    100     5</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2  risperidone  2.0       50.000000    100     5</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3   olanzapine  5.0       20.000000    100     5</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4   quetiapine 75.0        1.333333    100     5</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5  ziprasidone 60.0        1.666667    100     5</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6 aripiprazole  7.5       13.333333    100     5</span></span></code></pre></div>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
